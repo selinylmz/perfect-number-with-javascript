@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Number(Mükemmel Sayı)</title>
+</head>
+<body>
+    <h1>Mükemmel sayi</h1>
+    <input type="text" id="txtNumber"><br>
+    <input type="button" id="resultBtn" value="Hesapla"><br>
+    <p id="result"></p>
+
+</body>
+<script>
+    var resultBtn=document.getElementById('resultBtn');
+    resultBtn.onclick=function()
+    {
+        var txtNumber=Number(document.getElementById('txtNumber').value);
+        var toplam=0;
+        for(var i=1;i<txtNumber;i++)
+        {
+            if(txtNumber%i==0){
+                toplam=toplam+i;
+            }
+        }
+        if(txtNumber==toplam)
+        {
+            document.getElementById('result').innerHTML=txtNumber+"Mükkemeldir."
+        }else{
+            document.getElementById('result').innerHTML=txtNumber+"Mükkemel değildir."
+        }
+    }
+</script>
+</html>
